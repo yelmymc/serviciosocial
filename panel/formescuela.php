@@ -10,39 +10,63 @@
 		<header>
 			<div></div>
 		</header>
-			<section>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<form class="form-inline">
-								<div class="form-group">
-							    	<label class="sr-only" for="escuela">Escuela</label>
-							    	<div class="input-group">
-							      		<div class="input-group-addon">Escuela</div>
-							      		<input type="text" class="form-control" name="escuela" id="escuela" placeholder="Escuela">
-							    	</div>
-							  	</div>
-							  	<div class="form-group">
-							    	<label class="sr-only" for="poblacion">Poblacion</label>
-							    	<div class="input-group">
-							      		<div class="input-group-addon">Población</div>
-							      		<input type="text" class="form-control" name="poblacion" id="poblacion" placeholder="Población">
-							    	</div>
-							  	</div>
-							  	<div class="form-group">
-							    	<label class="sr-only" for="descripcion">Descripcion</label>
-							    	<span>Descripción</span>
-							    	<div class="input-group">
-							      		<textarea class="form-control" name="descripcion" id="descripcion" placeholder=""></textarea> 
-							    	</div>
-							  	</div>
-							  	<div class="form-group">
-							    	<input type="file" name="galeria" id="galeria" multiple />
-							  	</div>
 
-							  	<button type="submit" class="btn btn-primary">Guardar</button>
-							</form>
-						</div>
+		<section>	
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-1 content-menu">
+						<section id="menu">
+							<nav>
+								<ul>
+									<li class="active">
+										<a href="#"><i class="fa fa-university"></i><br/>Escuelas</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-gamepad"></i><br/>Juegos</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-newspaper-o"></i><br/>Noticias</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-cog"></i><br/>Opciones</a>
+									</li>
+								</ul>
+							</nav>
+						</section>
+					</div>
+					<div class="col-sm-11 content-white">
+						<section id="contenido">
+							<div class="">
+								<form class="form-inline">
+									<div class="form-group">
+									    <label class="sr-only" for="escuela">Escuela</label>
+									    <div class="input-group">
+									      	<div class="input-group-addon">Escuela</div>
+									      	<input type="text" class="form-control" name="escuela" id="escuela" placeholder="Escuela">
+									    </div>
+									</div>
+									<div class="form-group">
+									    <label class="sr-only" for="poblacion">Poblacion</label>
+									    <div class="input-group">
+									      	<div class="input-group-addon">Población</div>
+									      	<input type="text" class="form-control" name="poblacion" id="poblacion" placeholder="Población">
+									    </div>
+									</div>
+									<div class="form-group">
+									    <label class="sr-only" for="descripcion">Descripcion</label>
+									    <span>Descripción</span>
+									    <div class="input-group">
+									      	<textarea class="form-control" name="descripcion" id="descripcion" placeholder=""></textarea> 
+									    </div>
+									</div>
+									<div class="form-group">
+									    <input type="file" name="galeria" id="galeria" multiple />
+									</div>
+
+									<button type="submit" class="btn btn-primary">Guardar</button>
+								</form>
+							</div>
+						</section>
 					</div>
 				</div>
 			</section>

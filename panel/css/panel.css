@@ -1,6 +1,11 @@
-body{
-    background: url(../../imagenes/background1_1.png);
-}
+body{background: url(../../imagenes/background1_1.png);}
+
+#menu nav ul{padding: 0; list-style: none;}
+#menu nav ul li{text-align: center;}
+#menu nav ul li.active{background-color: #fff;}
+
+.content-white{background-color: #fff;}
+.content-menu{padding: 0;}
 
 @media (max-width: 991px){
   
