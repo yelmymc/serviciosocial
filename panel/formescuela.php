@@ -19,16 +19,16 @@
 							<nav>
 								<ul>
 									<li class="active">
-										<a href="#"><i class="fa fa-university"></i><br/>Escuelas</a>
+										<a href="listescuela.php"><i class="fa fa-university"></i><br/>Escuelas</a>
 									</li>
 									<li>
-										<a href="#"><i class="fa fa-gamepad"></i><br/>Juegos</a>
+										<a href="listjuegos.php"><i class="fa fa-gamepad"></i><br/>Juegos</a>
 									</li>
 									<li>
-										<a href="#"><i class="fa fa-newspaper-o"></i><br/>Noticias</a>
+										<a href="listnoticias.php"><i class="fa fa-newspaper-o"></i><br/>Noticias</a>
 									</li>
 									<li>
-										<a href="#"><i class="fa fa-cog"></i><br/>Opciones</a>
+										<a href="formopciones.php"><i class="fa fa-cog"></i><br/>Opciones</a>
 									</li>
 								</ul>
 							</nav>
