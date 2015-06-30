@@ -15,24 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-1 content-menu">
-						<section id="menu">
-							<nav>
-								<ul>
-									<li class="active">
-										<a href="listescuela.php"><i class="fa fa-university"></i><br/>Escuelas</a>
-									</li>
-									<li>
-										<a href="listjuegos.php"><i class="fa fa-gamepad"></i><br/>Juegos</a>
-									</li>
-									<li>
-										<a href="listnoticias.php"><i class="fa fa-newspaper-o"></i><br/>Noticias</a>
-									</li>
-									<li>
-										<a href="formopciones.php"><i class="fa fa-cog"></i><br/>Opciones</a>
-									</li>
-								</ul>
-							</nav>
-						</section>
+						<?php include_once 'include/menu.php';?>
 					</div>
 					<div class="col-sm-11 content-white">
 						<section id="contenido">
