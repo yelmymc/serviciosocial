@@ -18,7 +18,7 @@
 
 		function inserta_usuario(){
 			$conexion = new conexion();
-			$sql = "insert into usuario (nombre, correo, user, pass) values('".htmlspecialchars($this->nombre)."','".htmlspecialchars($this->correo)."','".$this->user."',MD5('".$this->pass."'))";
+			$sql = "insert into usuarios (nombre, correo, user, pass) values('".htmlspecialchars($this->nombre)."','".htmlspecialchars($this->correo)."','".$this->user."',MD5('".$this->pass."'))";
 			return $this->idusuario=$conexion->ejecutar_sentencia($sql);
 		}
 
@@ -30,19 +30,19 @@
 				$pedazo2="user ='".$this->user."',";
 			if ($this->password!='')   
 				$pedazo="pass = MD5('".$this->pass."'),";
-			$sql="update usuario set ".$pedazo2." ".$pedazo." nombre = '".htmlspecialchars($this->nombre)."', correo = '".htmlspecialchars($this->correo)."' where idusuario=".$this->idusuario;
+			$sql="update usuarios set ".$pedazo2." ".$pedazo." nombre = '".htmlspecialchars($this->nombre)."', correo = '".htmlspecialchars($this->correo)."' where idusuario=".$this->idusuario;
 			return $conexion->ejecutar_sentencia($sql);
 		}
 
 		function elimina_usuario(){
 			$conexion=new conexion();
-			$sql="delete from usuario where idusuario=".$this->idusuario;
+			$sql="delete from usuarios where idusuario=".$this->idusuario;
 			return $conexion->ejecutar_sentencia($sql);
 		}
 
 		function listaUsuarios(){
 			$conexion = new conexion();
-			$sql = "select * from usuario order by id desc";
+			$sql = "select * from usuarios order by id desc";
 			$result = $conexion->ejecutar_sentencia($sql);
 			$resultados = array();
 			while ($row = mysqli_fetch_array($result)){
@@ -58,7 +58,7 @@
 
 		function obten_usuario(){
 			$conexion=new conexion();
-			$sql="select * from usuario where idusuario='".$this->idusuario."'";
+			$sql="select * from usuarios where idusuario='".$this->idusuario."'";
 			$result=$conexion->ejecutar_sentencia($sql);
 			while($row=mysqli_fetch_array($result))
 			{
