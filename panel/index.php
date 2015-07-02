@@ -5,7 +5,7 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta name="author" content="" />
-		<meta property="og:title" content="PUNTOARQ" />
+		<meta property="og:title" content="" />
 		<meta property="og:url" content="" />
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content="" />
