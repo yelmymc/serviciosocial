@@ -60,7 +60,8 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
 		<!--<?php include_once('include/menu.php');?>
 

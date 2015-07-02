@@ -3,7 +3,8 @@
 		<ul>
 			<li class="active">
 				<!--<a href="listescuela.php"><i class="fa fa-university"></i><br/>Escuelas</a>-->
-				<a href="formescuela.php"><i class="fa fa-university"></i><br/>Escuelas</a>
+				<a href="listescuela.php"><i class="fa fa-book"></i><br/>Escuelas</a>
+				<!--<a href="formescuela.php"><i class="fa fa-university"></i><br/>Escuelas</a>-->
 			</li>
 			<li>
 				<!--<a href="listjuegos.php"><i class="fa fa-gamepad"></i><br/>Juegos</a>-->
