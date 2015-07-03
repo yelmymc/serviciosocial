@@ -7,6 +7,9 @@
  	
  	$operaciones=$_GET['value'];
  	switch ($operaciones) {
+ 		case 'login':
+ 			
+ 		break;
  		/*case 'listatours':
  			$tours = new noticia();
 			$listatours = $tours->listartoursdisponibles();

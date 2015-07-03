@@ -24,8 +24,7 @@
 
 	</head>
 	<body>
-		
-
+	
 		<section id="login">
 			<div class="contenido">
 				<center>
@@ -46,26 +45,8 @@
 			</div>
 		</section>
 
-		<!--<section id="login">
-			<div class="contenido">
-				<center>
-	 				<div class="sesion">
-						<div class="box-title">
-							<h4>LOGIN</h4>
-							<i class="fa fa-lock"></i>
-						</div>
-						<div class="box-body">
-							<input type="text" name="user" placeholder="usuario"/>
-							<input type="password" name="pass" placeholder="contraseña"/>
-							<button name="login" value="Log In">Login</button>
-							<a href="#">¿Olvido su contraseña?</a>
-						</div>
-					</div>
-				</center>
-			</div>
-		</section>-->
-
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
 	</body>
 </html>
