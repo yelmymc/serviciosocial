@@ -2,13 +2,15 @@
 	function __autoload($nombre_clase) {
 	    include 'clases/'.$nombre_clase .'.php';
 	}
-	
-	header('Content-Type: application/json; charset=UTF-8');
- 	
- 	$operaciones=$_GET['value'];
+	//header('Content-Type: application/json; charset=UTF-8');
+ 	$operaciones=$_REQUEST['value'];
  	switch ($operaciones) {
  		case 'login':
- 			
+ 			if($_REQUEST['username'] === 'TestPerson' && $_REQUEST['password'] == '1234'){
+ 				echo 'correct';
+ 			}else{
+ 				echo "wrong";
+ 			}
  		break;
  		/*case 'listatours':
  			$tours = new noticia();

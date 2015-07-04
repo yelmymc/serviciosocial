@@ -15,7 +15,8 @@
 				<a href="formnoticia.php"><i class="fa fa-newspaper-o"></i><br/>Noticias</a>
 			</li>
 			<li>
-				<a href="formopciones.php"><i class="fa fa-cog"></i><br/>Opciones</a>
+				<!--<a href="formopciones.php"><i class="fa fa-cog"></i><br/>Opciones</a>-->
+				<a href="formusuario.php"><i class="fa fa-cog"></i><br/>Opciones</a>
 			</li>
 		</ul>
 	</nav>

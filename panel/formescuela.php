@@ -6,7 +6,7 @@
 		<title>Formulario de Escuela</title>
 
 	</head>
-	<body>
+	<body ng-app="escuela">
 		<header>
 			<div class="container">
 				<div class="row">
@@ -20,7 +20,7 @@
 		</header>
 
 		<section>	
-			<div class="container">
+			<div class="container" ng-controller="insertEscuela">
 				<div class="row">
 					<div class="col-sm-1 content-menu">
 						<?php include_once 'include/menu.php';?>
@@ -34,20 +34,20 @@
 									<label class="sr-only" for="escuela">Escuela</label>
 									<div class="input-group">
 									    <div class="input-group-addon">Escuela</div>
-										<input type="text" class="form-control" name="escuela" id="escuela" placeholder="Escuela">
+										<input type="text" class="form-control" ng-model="escuela" name="escuela" id="escuela" placeholder="Escuela">
 									</div>
 								</div>
 								<div class="form-group espacios">
 									<label class="sr-only" for="poblacion">Poblacion</label>
 									<div class="input-group">
 									    <div class="input-group-addon">Población</div>
-									    <input type="text" class="form-control" name="poblacion" id="poblacion" placeholder="Población">
+									    <input type="text" class="form-control" ng-model="poblacion" name="poblacion" id="poblacion" placeholder="Población">
 									</div>
 								</div>
 								<div class="form-group espacios">
 									<label class="sr-only" for="descripcion">Descripcion</label>
 									<span>Descripción</span>
-									<textarea name="descripcion" id="descripcion" placeholder=""></textarea> 
+									<textarea name="descripcion" ng-model="descripcion" id="descripcion" placeholder=""></textarea> 
 									
 								</div>
 								<div class="clearfix"></div>
@@ -63,26 +63,18 @@
 			</div>
 		</section>
 
-		<!--<?php include_once('include/menu.php');?>
-
-		<div class="site-wrap"> 
-			<header>
-				<div></div>|
-			</header>
-			<section>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-10 col-md-10 col-sm-10">
-							<input type="text" name="titulo" value=""/>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>-->
-
 		
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-sanitize.js"></script>
+		<script type="text/javascript">
+		var escuela = angular.module('escuela'[]);
+
+		escuela.controller('insertEscuela',['$scope', '$http', function($scope, $http){
+			
+		}]);
+		</script>
 	</body>
 </html>
