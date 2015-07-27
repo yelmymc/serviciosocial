@@ -52,7 +52,7 @@
 								</div>
 								<div class="clearfix"></div>
 								<div class="form-group espacios">
-									<input type="file" name="galeria" id="galeria" multiple />
+									<input type="file" name="galeria" class="galeria" id="galeria" multiple />
 								</div>
 
 								<button type="submit" class="btn btn-primary">Guardar</button>
@@ -63,7 +63,7 @@
 			</div>
 		</section>
 
-		<?php require_once 'script.php';?>
+		<?php require_once 'include/scripts.php';?>
 
 		<script type="text/javascript">
 		var escuela = angular.module('escuela',[]);
