@@ -59,7 +59,7 @@
 
 		
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<?php require_once 'script.php';?>
+
 	</body>
 </html>
