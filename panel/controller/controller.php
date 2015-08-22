@@ -12,6 +12,11 @@
  				echo "wrong";
  			}
  		break;
+ 		case 'agregarUsuario':
+ 			$usuario = new usuario($_REQUEST['nombre'], $_REQUEST['correo'], $_REQUEST['username'], $_REQUEST['password']){
+ 			print_r($_REQUEST);
+
+ 		break;
  		/*case 'listatours':
  			$tours = new noticia();
 			$listatours = $tours->listartoursdisponibles();

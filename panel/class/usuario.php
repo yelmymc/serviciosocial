@@ -6,7 +6,8 @@
 		var $nombre;
 		var $correo;
 		var $user;
-		Var $pass;
+		var $pass;
+		var $status;
 
 		function __construct($id = 0, $nombre = '', $correo = '', $usuario = '', $contrasena = ''){
 			$this->idusuario = $id;
@@ -18,7 +19,7 @@
 
 		function inserta_usuario(){
 			$conexion = new conexion();
-			$sql = "insert into usuarios (nombre, correo, user, pass) values('".htmlspecialchars($this->nombre)."','".htmlspecialchars($this->correo)."','".$this->user."',MD5('".$this->pass."'))";
+			$sql = "insert into usuarios (nombre, correo, user, pass, status) values ('".htmlspecialchars($this->nombre)."','".htmlspecialchars($this->correo)."','".$this->user."',MD5('".$this->pass."'), 1)";
 			return $this->idusuario=$conexion->ejecutar_sentencia($sql);
 		}
 

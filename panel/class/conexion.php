@@ -9,7 +9,7 @@
 		function conexion(){
 			$this->host='localhost';
 			$this->user='root';
-			$this->password='';
+			$this->password='root';
 			$this->bd='serviciosocial';
 		}
 	
