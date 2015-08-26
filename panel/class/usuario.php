@@ -8,6 +8,7 @@
 		var $user;
 		var $pass;
 		var $status;
+		var $token;
 
 		function __construct($id = 0, $nombre = '', $correo = '', $usuario = '', $contrasena = ''){
 			$this->idusuario = $id;
@@ -19,7 +20,7 @@
 
 		function inserta_usuario(){
 			$conexion = new conexion();
-			$sql = "insert into usuarios (nombre, correo, user, pass, status) values ('".htmlspecialchars($this->nombre)."','".htmlspecialchars($this->correo)."','".$this->user."',MD5('".$this->pass."'), 1)";
+			$sql = "insert into usuarios (nombre, correo, user, pass, status,token) values ('".htmlspecialchars($this->nombre)."','".htmlspecialchars($this->correo)."','".$this->user."',MD5('".$this->pass."'), 1, MD5('".$this->correo."'))";
 			return $this->idusuario=$conexion->ejecutar_sentencia($sql);
 		}
 
@@ -69,5 +70,27 @@
 			}
 			mysqli_free_result($result);
 		}
+
+		function usernameDisponible($username){
+			$conexion = new conexion();
+			$sql = "select user from usuarios where user = '".$username."'";
+			$result = $conexion->ejecutar_sentencia($sql);
+			$rows = mysqli_num_rows($result);
+			if($rows > 0)
+				echo 1;
+			else
+				echo 0; 
+		}	
+
+		function emailDisponible($email){
+			$conexion = new conexion();
+			$sql = "select correo from usuarios where correo = '".$email."'";
+			$result = $conexion->ejecutar_sentencia($sql);
+			$rows = mysqli_num_rows($result);
+			if($rows > 0)
+				echo 1;
+			else
+				echo 0;
+		}	
 	}
 ?>

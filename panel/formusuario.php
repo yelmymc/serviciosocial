@@ -3,7 +3,7 @@
 	<head>
 		<?php require_once('include/header.php');?>
 
-		<title>Formulario de Escuela</title>
+		<title>Formulario de Usuarios</title>
 
 	</head>
 	<body ng-app="usuario">
@@ -34,14 +34,14 @@
 									<label class="sr-only" for="nombre">Nombre</label>
 									<div class="input-group">
 									    <div class="input-group-addon">Nombre</div>
-										<input type="text" class="form-control" ng-model="form.nombre" name="nombre" id="nombre" placeholder="Nombre completo">
+										<input type="text" class="form-control" ng-model="form.nombre" name="nombre" id="nombre" placeholder="Nombre completo" required>
 									</div>
 								</div>
 								<div class="form-group espacios">
 									<label class="sr-only" for="correo">e-mail</label>
 									<div class="input-group">
 									    <div class="input-group-addon">e-mail</div>
-									    <input type="email" class="form-control" ng-model="form.correo" name="correo" id="correo" placeholder="e-mail">
+									    <input type="email" class="form-control" ng-model="form.correo" ng-keyup="validarCorreo()" name="correo" id="correo" placeholder="e-mail" required>
 									</div>
 								</div>
 								<!--<div class="form-group espacios">
@@ -55,7 +55,7 @@
 									<label class="sr-only" for="username">username</label>
 									<div class="input-group">
 									    <div class="input-group-addon">username</div>
-									    <input type="text" class="form-control" ng-model="form.username" name="username" id="username" placeholder="username">
+									    <input type="text" class="form-control" ng-model="form.username" ng-keyup="validarUser()" name="username" id="username" placeholder="username" required>
 									</div>									
 								</div>
 								
@@ -63,14 +63,20 @@
 									<label class="sr-only" for="password">password</label>
 									<div class="input-group">
 									    <div class="input-group-addon">password</div>
-									    <input type="password" class="form-control" ng-model="form.password" name="password" id="password" placeholder="password">
+									    <input type="password" class="form-control" ng-model="form.password" name="password" id="password" placeholder="password" required>
+									</div>									
+								</div>	
+								<div class="form-group espacios">
+									<label class="sr-only" for="repassword">repassword</label>
+									<div class="input-group">
+									    <div class="input-group-addon">confirmar password</div>
+									    <input type="password" class="form-control" ng-model="form.repassword" name="repassword" id="repassword" placeholder="confirmas password" required>
 									</div>									
 								</div>	
 								<div class="form-group control espacios">
 									<button type="submit" ng-disabled="formUsuario.$invalid" class="btn btn-primary" value="agregarUsuario">Guardar</button>
 								</div>										
 							</form>
-							<pre>{{form}}</pre>
 						</div>
 					</div>
 				</div>
@@ -92,16 +98,43 @@
 					$http({
       					method: 'POST',
       					url: 'controller/controller.php',
-      					params: formulario,
+      					params: formulario
      				})
      				.success(function(response) {
      					console.log(response)
+     					if(response == 1)
+     						window.location.href = "listescuela.php";
 				        //$scope.codeStatus = response.data;
 				    })
 				    /*.error(function(response) {
 				        $scope.codeStatus = response || "Request failed";
 				    });*/
-				}
+				};
+
+				$scope.validarUser = function(){
+					$http({
+						method: 'POST',
+						url: 'controller/controller.php',
+						params: {value: 'validarUser', user: $scope.form.username}
+					})
+					.success(function(response){
+						console.log(response);
+					})
+				};
+
+				$scope.validarCorreo = function(){
+					validador = formUsuario.input[type='email'].$valid;
+
+					console.log(validador);
+					$http({
+						method: 'POST',
+						url: 'controller/controller.php',
+						params: {value: 'validarCorreo', correo: $scope.form.correo}
+					})
+					.success(function(response){
+						console.log(response);
+					})
+				};
 			}]);
 		</script>
 	</body>
