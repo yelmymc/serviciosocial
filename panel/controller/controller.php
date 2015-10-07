@@ -1,21 +1,46 @@
 <?php
 	function __autoload($nombre_clase) {
-	    include 'clases/'.$nombre_clase .'.php';
+	    include_once '../class/'.$nombre_clase .'.php';
 	}
 	//header('Content-Type: application/json; charset=UTF-8');
 	
  	$operaciones=$_REQUEST['value'];
  	switch ($operaciones) {
  		case 'login':
- 			if($_REQUEST['username'] === 'TestPerson' && $_REQUEST['password'] == '1234'){
+ 			if($_REQUEST['username'] === 'fmat' && $_REQUEST['password'] == '1234'){
  				echo 'correct';
  			}else{
  				echo "wrong";
  			}
  		break;
+ 		case 'validarUser':
+ 			if(isset($_REQUEST['user'])){
+ 				$usuario = new usuario();
+ 				$usuario->usernameDisponible($_REQUEST['user']);	
+ 			}else{
+ 				echo 2;
+ 			}
+ 		break;
+ 		case 'validarCorreo':
+ 			if(isset($_REQUEST['correo'])){
+ 				$usuario = new usuario();
+ 				$usuario->emailDisponible($_REQUEST['correo']);	
+ 			}else{
+ 				echo 2;
+ 			}
+ 		break;
  		case 'agregarUsuario':
+<<<<<<< HEAD
  			$usuario = new usuario($_REQUEST['nombre'], $_REQUEST['correo'], $_REQUEST['username'], $_REQUEST['password']);
  			print_r($_REQUEST);
+=======
+ 			$usuario = new usuario(0, $_REQUEST['nombre'], $_REQUEST['correo'], $_REQUEST['username'], $_REQUEST['password']);
+ 			$success = $usuario->inserta_usuario();
+ 			if($success > 0)
+ 				echo 1;
+ 			else
+ 				echo 0;
+>>>>>>> origin/master
 
  		break;
 
