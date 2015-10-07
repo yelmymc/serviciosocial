@@ -10,3 +10,9 @@ $(".galeria").filestyle({
     buttonText: "Imagenes",
    	iconName: "",
 });
+
+var app = angular.module('panel',['ngSanitize']);
+
+app.controller('formNoticia',['$scope','$http', function(){
+
+}]);

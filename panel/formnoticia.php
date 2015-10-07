@@ -6,15 +6,31 @@
 		<title>Formulario de Noticia</title>
 
 	</head>
-	<body>
+	<body ng-app="panel">
 		<header>
-			<div></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-11 col-sm-offset-1 cuadro">
+						<div class="">
+							
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
-			<section>
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<form class="form-inline">
+		<section ng-controller="formNoticia">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-1 content-menu">
+						<?php include_once 'include/menu.php';?>
+					</div>
+					<div class="col-sm-11 content-white">
+						<div class="contenido">
+							<h3>Nueva Noticia</h3>
+							<hr />
+							<form class="form-inline" method="post" action="controller/controller.php">
+								<input type="hidden" name="value" value="agregarNoticia">
+								<input type="hidden" name="idnoticia" value="">
 								<div class="form-group">
 							    	<label class="sr-only" for="titulo">Título</label>
 							    	<div class="input-group">
@@ -35,10 +51,12 @@
 
 							  	<button type="submit" class="btn btn-primary">Guardar</button>
 							</form>
-						</div>
+						</div>	
+							
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
 		<!--<?php include_once('include/menu.php');?>
 
@@ -59,7 +77,7 @@
 
 		
 
-		<?php require_once 'script.php';?>
+		<?php require_once 'scripts.php';?>
 
 	</body>
 </html>

@@ -3,6 +3,7 @@
 	    include 'clases/'.$nombre_clase .'.php';
 	}
 	//header('Content-Type: application/json; charset=UTF-8');
+	
  	$operaciones=$_REQUEST['value'];
  	switch ($operaciones) {
  		case 'login':
@@ -13,10 +14,36 @@
  			}
  		break;
  		case 'agregarUsuario':
- 			$usuario = new usuario($_REQUEST['nombre'], $_REQUEST['correo'], $_REQUEST['username'], $_REQUEST['password']){
+ 			$usuario = new usuario($_REQUEST['nombre'], $_REQUEST['correo'], $_REQUEST['username'], $_REQUEST['password']);
  			print_r($_REQUEST);
 
  		break;
+
+ 		case 'agregarEscuela':
+ 			$escuela = new escuela($id = 0, $escuela = '', $poblacion = '', $descripcion= '', $fecha = '');
+ 		break;
+
+ 		case 'agregarNoticia':
+ 			$noticia = new noticia(0, $_REQUEST['titulo'], $_REQUEST['descripcion']);
+ 			$noticia->inserta_noticia();
+
+
+ 			if($noticia->idnoticia > 0){
+ 				$success = 1;
+ 			}else{
+ 				$success = 0;
+ 			}
+ 			header('Location:listnoticia.php?success='+$success);
+ 		break;
+ 		case 'modificarNoticia':
+ 			$noticia = new noticia($_REQUEST['idnoticia'], $_REQUEST['titulo'], $_REQUEST['descripcion']);
+ 			$noticia->modifica_noticia();
+ 		break;
+ 		case 'eliminarNoticia':
+ 			$noticia = new noticia($_REQUEST['idnoticia']);
+ 			$noticia->elimina_noticia();
+ 		break;
+
  		/*case 'listatours':
  			$tours = new noticia();
 			$listatours = $tours->listartoursdisponibles();

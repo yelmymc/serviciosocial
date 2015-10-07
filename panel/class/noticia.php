@@ -17,7 +17,7 @@
 		function inserta_noticia(){
 			$conexion = new conexion();
 			$sql = "insert into noticias (titulo, descripcion, fecha) values('".htmlspecialchars($this->titulo)."','".htmlspecialchars($this->descripcion)."','".$this->fecha."')";
-			return $this->idnoticia=$conexion->ejecutar_sentencia($sql);
+			$this->idnoticia=$conexion->ejecutar_sentencia($sql);
 		}
 
 		function modifica_noticia(){
